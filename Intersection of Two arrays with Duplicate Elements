@@ -1,0 +1,28 @@
+https://www.geeksforgeeks.org/problems/intersection-of-two-arrays-with-duplicate-elements/1
+o(nlogn +mlogm)
+class Solution {
+  public:
+    vector<int> intersect(vector<int>& a, vector<int>& b) {
+        // code here
+        vector<int>res;
+        int i=0,j=0;
+        sort(a.begin(),a.end());
+         sort(b.begin(),b.end());
+        int n=a.size(),m=b.size();
+        while(i<n && j<m)
+        {
+            if(a[i]<b[j])
+                i++;
+            else if(a[i]>b[j])
+                j++;
+            else
+            {
+                if(res.size()==0 || a[i]>res[res.size()-1])//if(res.empty() || a[i]>res.back())
+                    res.push_back(a[i]);
+                i++;
+                j++;
+            }
+        }
+        return res;
+    }
+};
