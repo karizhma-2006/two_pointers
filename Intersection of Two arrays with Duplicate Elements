@@ -1,5 +1,7 @@
 https://www.geeksforgeeks.org/problems/intersection-of-two-arrays-with-duplicate-elements/1
-o(nlogn +mlogm)
+//time complexity-o(nlogn +mlogm)given array is not sorted so o(nlogn) 
+note:
+  teo pointers technique works olny in sorted array
 class Solution {
   public:
     vector<int> intersect(vector<int>& a, vector<int>& b) {
